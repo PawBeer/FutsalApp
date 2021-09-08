@@ -1,0 +1,108 @@
+﻿@model IEnumerable<FutsalApp.Models.Game>
+
+@{
+    ViewData["Title"] = "List of reservation";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GameDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player10)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if ((item.IsGame).Equals(false))
+            {
+        <tr style="background-color: indianred; font-weight:800">
+            <td>
+                @Html.DisplayFor(modelItem => item.GameDate)
+            </td>
+            <td colspan="10" align="center">
+                Game is canceled!!!
+            </td>
+
+        </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GameDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player6)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player7)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player8)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player9)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player10)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
