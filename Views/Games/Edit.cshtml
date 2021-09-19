@@ -13,9 +13,19 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <div style="display: none" class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsGame" /> @Html.DisplayNameFor(model => model.IsGame)
+                </label>
+            </div>
+            <div style="display: none" class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsValid" /> @Html.DisplayNameFor(model => model.IsValid)
+                </label>
+            </div>
             <div class="form-group">
                 <label asp-for="GameDate" class="control-label"></label>
-                <input asp-for="GameDate" class="form-control" readonly/>
+                <input asp-for="GameDate" class="form-control" readonly />
                 <span asp-validation-for="GameDate" class="text-danger"></span>
             </div>
             <div class="form-group">

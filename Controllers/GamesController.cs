@@ -22,14 +22,14 @@ namespace FutsalApp.Controllers
         // GET: Games
         public async Task<IActionResult> Index()
         {
-            return View("Index", await _context.Game.Where(j => j.IsValid.Equals(true)).ToListAsync());
+            return View("Index", await _context.Game.Where(j => j.IsValid.Equals(true)).OrderBy(p => p.GameDate).ToListAsync());
 
         }
 
         // GET: Games/AdminPage
         public async Task<IActionResult> AdminPage()
         {
-            return View(await _context.Game.ToListAsync());
+            return View("AdminPage", await _context.Game.OrderBy(p => p.GameDate).ToListAsync());
         }
 
         // GET: Games/Details/5
