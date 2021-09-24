@@ -14,10 +14,20 @@ namespace FutsalApp.Controllers
     {
         private readonly ApplicationDbContext _context;
 
+        string datePatt = @"yyyy-M-d";
+        DateTime now = DateTime.Now;
+
         public GamesController(ApplicationDbContext context)
         {
             _context = context;
         }
+
+        /*// GET: Games
+        public async Task<IActionResult> Index()
+        {
+            return View("Index", await _context.Game.Where(j => j.IsValid.Equals(true)).OrderBy(p => p.GameDate).ToListAsync());
+
+        }*/
 
         // GET: Games
         public async Task<IActionResult> Index()
@@ -125,6 +135,182 @@ namespace FutsalApp.Controllers
 
         // GET: Games/Edit/5
         public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel17923/5
+        public async Task<IActionResult> Cancel17923(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel25653/5
+        public async Task<IActionResult> Cancel25653(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel33424/5
+        public async Task<IActionResult> Cancel33424(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel42309/5
+        public async Task<IActionResult> Cancel42309(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel58942/5
+        public async Task<IActionResult> Cancel58942(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel61015/5
+        public async Task<IActionResult> Cancel61015(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel79803/5
+        public async Task<IActionResult> Cancel79803(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel83585/5
+        public async Task<IActionResult> Cancel83585(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel91147/5
+        public async Task<IActionResult> Cancel91147(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/Cancel103472/5
+        public async Task<IActionResult> Cancel103472(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var game = await _context.Game.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return View(game);
+        }
+
+        // GET: Games/NextWeek/5
+        public async Task<IActionResult> NextWeek(int? id)
         {
             if (id == null)
             {
