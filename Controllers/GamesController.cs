@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FutsalApp.Data;
 using FutsalApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FutsalApp.Controllers
 {
@@ -37,6 +38,7 @@ namespace FutsalApp.Controllers
         }
 
         // GET: Games/AdminPage
+        [Authorize]
         public async Task<IActionResult> AdminPage()
         {
             return View("AdminPage", await _context.Game.OrderBy(p => p.GameDate).ToListAsync());
@@ -69,6 +71,7 @@ namespace FutsalApp.Controllers
         // POST: Games/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IsGame,IsValid,GameDate,Player1,Player2,Player3,Player4,Player5,Player6,Player7,Player8,Player9,Player10")] Game game)
@@ -83,6 +86,7 @@ namespace FutsalApp.Controllers
         }
 
         // GET: Games/AdminEdit/5
+        
         public async Task<IActionResult> AdminEdit(int? id)
         {
             if (id == null)
@@ -134,6 +138,7 @@ namespace FutsalApp.Controllers
         }
 
         // GET: Games/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -310,6 +315,7 @@ namespace FutsalApp.Controllers
         }
 
         // GET: Games/NextWeek/5
+        [Authorize]
         public async Task<IActionResult> NextWeek(int? id)
         {
             if (id == null)
@@ -361,6 +367,7 @@ namespace FutsalApp.Controllers
         }
 
         // GET: Games/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

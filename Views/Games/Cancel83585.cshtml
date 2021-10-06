@@ -3,9 +3,6 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
 <h4>Game</h4>
 <hr />
 <div class="row">
@@ -63,7 +60,6 @@
                 <input asp-for="Player7" class="form-control" />
                 <span asp-validation-for="Player7" class="text-danger"></span>
             </div>
-            <label>I am not going to play on this date</label>
             <div style="display: none" class="form-group">
                 <label asp-for="Player9" class="control-label"></label>
                 <input asp-for="Player9" class="form-control" />
@@ -74,9 +70,13 @@
                 <input asp-for="Player10" class="form-control" />
                 <span asp-validation-for="Player10" class="text-danger"></span>
             </div>
+
+            <label>I am <b>not going</b> to play on this date</label>
+
             <div class="form-group">
-                <input type="submit" value="Confirm" class="btn btn-primary" />
+                <input type="submit" value="Resign" class="btn btn-primary" />
             </div>
+            
         </form>
     </div>
 </div>
