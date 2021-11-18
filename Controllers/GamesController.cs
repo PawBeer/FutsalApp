@@ -15,8 +15,6 @@ namespace FutsalApp.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        string datePatt = @"yyyy-M-d";
-        DateTime now = DateTime.Now;
 
         public GamesController(ApplicationDbContext context)
         {
